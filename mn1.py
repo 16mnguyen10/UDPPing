@@ -13,6 +13,7 @@ packet_Loss_Rate = 0
 min_RTT = 0
 maximum_RTT = 0
 sum_RTT = 0
+totalTime = 0
 Avg_RTT = 0
 
 try:
