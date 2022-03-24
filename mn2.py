@@ -44,6 +44,7 @@ try:
             print(message + ", RTT = " + str(round(totalTime, 2)) + " ms")
         except clientSocket.timeout:
             print("Request Timed Out")
+            packet_loss += 1
 
 finally:
     Avg_RTT = sum_RTT / counter
