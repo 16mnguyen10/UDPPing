@@ -10,7 +10,7 @@ counter = 0
 clientSocket.settimeout(1)
 Avg_RTT = 0
 packet_Loss_Rate = 0
-min_RTT = 0
+min_RTT = 100
 maximum_RTT = 0
 sum_RTT = 0
 totalTime = 0
