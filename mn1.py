@@ -33,6 +33,7 @@ try:
             totalTime = end - start
             sum_RTT = sum_RTT + totalTime
 
+            # Min and Max RTT 
             if totalTime > maximum_RTT:
                 maximum_RTT = totalTime
             if totalTime < min_RTT:
@@ -44,6 +45,7 @@ try:
             print("Request Timed Out")
 
 finally:
+    # Average and Packet Loss Calculation
     Avg_RTT = sum_RTT / counter
     packet_Loss_Rate = (packet_loss / counter) * 100
     print("Min RTT = " + str(round(min_RTT, 2)) + " ms")
