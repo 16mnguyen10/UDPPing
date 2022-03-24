@@ -11,11 +11,11 @@ counter = 0
 clientSocket.settimeout(1)
 Avg_RTT = 0
 packet_Loss_Rate = 0
-min_RTT = 0
+min_RTT = 100
 maximum_RTT = 0
 sum_RTT = 0
+totalTime = 0
 Avg_RTT = 0
-rand_int = random.randint(1,5)
 
 try:
     # Receive the client packet along with the address it is coming from
@@ -26,9 +26,11 @@ try:
         # Ping #: Host 127.0.0.1 replied: seq 1 Tue Sep 28 23:19:27 2021, RTT = 0.00 ms
         message = "Ping " + str(i) + ": host 127.0.0.1 replied: seq " + str(i) + " " + time.ctime(
             start)
+        rand_int = random.randint(10, 40)
 
         try:
             packetSent = clientSocket.sendto(message.encode(), ('localhost', 12000))
+            time.sleep(rand_int)
             end = time.time()
             totalTime = end - start
             sum_RTT = sum_RTT + totalTime
