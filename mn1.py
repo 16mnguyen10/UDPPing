@@ -15,6 +15,7 @@ maximum_RTT = 0
 sum_RTT = 0
 totalTime = 0
 Avg_RTT = 0
+packet_loss = 0
 
 try:
     # Receive the client packet along with the address it is coming from
@@ -39,11 +40,12 @@ try:
 
             print(message + ", RTT = " + str(round(totalTime, 2)) + " ms")
         except clientSocket.timeout:
+            packet_loss += 1
             print("Request Timed Out")
 
 finally:
     Avg_RTT = sum_RTT / counter
-    packet_Loss_Rate = (totalTime / start) * 100
+    packet_Loss_Rate = (packet_loss / counter) * 100
     print("Min RTT = " + str(round(min_RTT, 2)) + " ms")
     print("Max RTT = " + str(round(maximum_RTT, 2)) + " ms")
     print("Avg RTT = " + str(round(Avg_RTT, 2)) + " ms")
