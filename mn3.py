@@ -36,8 +36,6 @@ try:
             totalTime = end - start
             sum_RTT = sum_RTT + totalTime
 
-            print(str(packet_Loss_Int))
-
             # Packet Loss Counter
             if packet_Loss_Int == (1 and 2):
                 print("Ping " + str(i) + ": timed out, message was lost")
